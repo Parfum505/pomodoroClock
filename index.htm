@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+  <title>PomodoroClock</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <h1>Pomodoro Clock</h1>
+  <div id="container" class="box-shadow-animation">
+      <div id="back"></div>
+      <div id="inputArea">
+        <input type="button" id="startButton" value="Set Pomodoro">
+        <br />
+        <input type="button" id="increase" class="button" value="+"><!--
+     --><input type="button" id="decrease" class="button" value="-">
+      </div>
+
+      <h2 id="time">01:00</h2>
+      <audio src="audio/tink.wav" class="tik"></audio>
+      <audio src="audio/bell.wav" class="bell"></audio>
+      <audio src="audio/stop.mp3" class="stop"></audio>
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

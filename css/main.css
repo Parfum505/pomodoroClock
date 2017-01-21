@@ -1,0 +1,152 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: sans-serif;
+	color: #333;
+	background-color: #60be56;
+	text-align: center;
+}
+#container{
+	position: relative;
+	width: 300px;
+	height: 265px;
+	margin: auto;
+	padding-top: 35px;
+	text-align: center;
+	border: 4px solid rgb(91, 83, 211);
+	border-radius: 50%;
+	overflow: hidden;
+}
+	/*animation for main container*/
+.box-shadow-animation{
+	-webkit-animation: box-shadow-animation 2s linear infinite;
+	animation: box-shadow-animation 2s linear infinite;
+}
+	/*background of Pomodoro Clock*/
+#back{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	z-index: -1;
+	background-color: red;
+}
+	/*main header*/
+h1{
+	margin: 30px 0;
+	font-size: 2em;
+	color: rgb(91, 83, 211);
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+	0px 0px 20px rgb(255,255,255),
+	0px 0px 40px rgb(18, 79, 0);
+}
+	/*animation for main header*/
+.text-shadow-animation{
+	-webkit-animation: text-shadows 0.2s ease-in;
+			animation: text-shadows 0.2s ease-in;
+	-webkit-animation-iteration-count: 5;
+			animation-iteration-count: 5;
+}
+
+	/*time screen*/
+h2{
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	margin: 0 ;
+	margin-left: -33%;
+	font-size: 5em;
+	color: rgb(91, 83, 211);
+	text-shadow: 7px 5px 7px rgba(19, 11, 129, 0.6);
+}
+	/*buttons*/
+input{
+	padding: 6px 10px;
+	border-radius: 5px;
+	border-top-color: #47d947;
+	border-left-color: #47d947;
+	border-bottom-color: #4ac84a;
+	border-right-color: #4ac84a;
+	background-color: #60be56;
+	box-shadow: 7px 7px 12px rgba(51, 51, 51, 0.83), inset 0 0 14px 1px rgba(53, 138, 55, 1);
+}
+
+input:first-child{
+	width: 120px;
+}
+input:focus {
+	outline: none;
+}
+.button {
+	display: inline-block;
+	padding: 1px 20px;
+	margin: 5px 12px 0 0;
+	font-size: 1.5em;
+}
+.button:last-child{
+	margin-right: 0;
+}
+	/*animation for main header*/
+@-webkit-keyframes text-shadows{
+	0%{
+		color: crimson;
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+		0px 0px 20px rgb(255,255,255),
+		0px 0px 40px rgb(18, 79, 0);
+	}
+	60% {
+	text-shadow: 0 0px 1px crimson;
+	}
+	100% {
+		color: red;
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+		0px 0px 20px rgb(255,255,255),
+		0px 0px 40px rgb(18, 79, 0);
+	}
+}
+@keyframes text-shadows{
+	0%{
+		color: crimson;
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+		0px 0px 20px rgb(255,255,255),
+		0px 0px 40px rgb(18, 79, 0);
+	}
+	60% {
+	text-shadow: 0 0px 1px crimson;
+	}
+	100% {
+		color: red;
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+		0px 0px 20px rgb(255,255,255),
+		0px 0px 40px rgb(18, 79, 0);
+	}
+}
+	/*animation for main container*/
+@-webkit-keyframes box-shadow-animation {
+0%, 100% {
+	box-shadow: 9px 9px 13px rgba(51, 51, 51, 0.43),
+				0 0 10px rgba(51, 51, 51, 0.43),
+				inset 0 0 46px 12px rgba(29, 67, 30, 0.3);
+	}
+50% {
+	box-shadow: 4px 9px 13px rgba(51, 51, 51, 0.43),
+				0 0 10px rgba(51, 51, 51, 0.43),
+				inset 0 0 46px 12px rgba(29, 67, 30, 0.3);
+	}
+}
+@keyframes box-shadow-animation {
+0%, 100% {
+	box-shadow: 9px 9px 13px rgba(51, 51, 51, 0.43),
+				0 0 10px rgba(51, 51, 51, 0.43),
+				inset 0 0 46px 12px rgba(29, 67, 30, 0.3);
+	}
+50% {
+	box-shadow: 4px 9px 13px rgba(51, 51, 51, 0.43),
+				0 0 10px rgba(51, 51, 51, 0.43),
+				inset 0 0 46px 12px rgba(29, 67, 30, 0.3);
+	}
+}
