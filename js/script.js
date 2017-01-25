@@ -1,11 +1,12 @@
 	var timeShow = document.getElementById('time'),
+		startButton = document.getElementById('startButton'),
 		secondsRemainPomodoro,
 		secondsRemainRelax,
 		handlerPomodoro,	//Pomodoro setInterval name
 		handlerRelax,	//Relax setInterval name
 		height = 0,		//height of background div (red or green)
-		timePomodoro = 1,	//set initial time of work
-		timeRelax = 1,	//set initial time of relax
+		timePomodoro = 25,	//set initial time of work
+		timeRelax = 5,	//set initial time of relax
 		setPomodoro = true;	//switch for setPomodoro&setRelax buttons
 
 	//fade out function for buttons + & -
@@ -35,10 +36,8 @@ function resetPage() {
 	if (handlerPomodoro) {
 		clearInterval(handlerPomodoro);
 	}
-	timePomodoro = 1,
-	timeRelax = 1,
 	height = 0;
-	timeShow.innerHTML = "01:00";
+	timeShow.innerHTML = timePomodoro < 10 ? "0" + timePomodoro+ ":00" : timePomodoro+ ":00";
 	fadeIn("increase");
 	fadeIn("decrease");
 	// fadeIn("inputArea");
@@ -148,24 +147,27 @@ document.getElementById('decrease').onclick = function () {
 	document.querySelector('.tik').play();
 };
 	//events of Set Pomodoro-, Set Relax- and Stop- buttons
-document.getElementById('startButton').onclick = function () {
+startButton.onclick = function () {
 
-		if (document.getElementById('startButton').value === "Stop" && !setPomodoro) {//init break with stop button
+		if (startButton.value === "Stop" && !setPomodoro) {//init break with stop button
 			document.querySelector('.stop').play(); //sound effect if break
 			resetPage();
 			setPomodoro = true; //reset switch for Set Pomodoro button
-			document.getElementById('startButton').value = "Set Pomodoro";
+			startButton.value = "Set Pomodoro";
 		} else if (setPomodoro) {
 			document.querySelector('.tik').play();
 			setPomodoro = false; //switch for Set Relax button
-			timeShow.innerHTML = "01:00";
-			document.getElementById('startButton').value = "Set Relax";
+			timeShow.innerHTML = timeRelax < 10 ? "0" + timeRelax+ ":00" : timeRelax+ ":00";
+			startButton.value = "Set Relax";
+			startButton.style.backgroundColor = "#7d75f6";
 		} else if (!setPomodoro) { //switch for Stop button
+			timeShow.innerHTML = timePomodoro < 10 ? "0" + timePomodoro+ ":00" : timePomodoro+ ":00";
 			document.querySelector('.tik').play();
 			fadeOut('increase'); //fade out + && - buttons
 			fadeOut('decrease');
 			startCountdown(); //init count down
-			document.getElementById('startButton').value = "Stop";
+			startButton.value = "Stop";
+			startButton.style.backgroundColor = "#60be56";//
 		}
 };
 
