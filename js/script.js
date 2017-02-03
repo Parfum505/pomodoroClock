@@ -19,7 +19,7 @@ function fadeOut(id) {
 			clearInterval(fadeOutHandler);
 			item.style.display = 'none';
 		} else item.style.opacity = opacity;
-	}, 1000);
+	}, 20);
 }
 	//fade in function for buttons + & -
 function fadeIn(id) {
