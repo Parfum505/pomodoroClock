@@ -14,13 +14,12 @@ function fadeOut(id) {
 	var item = document.getElementById(id),
 		opacity = 1;
 	var fadeOutHandler = setInterval(function() {
-		if (opacity <= 0) {
+		opacity -= 0.2;
+		if (opacity < 0) {
 			clearInterval(fadeOutHandler);
 			item.style.display = 'none';
-		}
-		opacity -= 0.2;
-		item.style.opacity = opacity;
-	}, 20);
+		} else item.style.opacity = opacity;
+	}, 1000);
 }
 	//fade in function for buttons + & -
 function fadeIn(id) {
